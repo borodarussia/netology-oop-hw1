@@ -19,11 +19,12 @@ second_mentor.courses_attached += ["Erebor"]
 
 second_mentor.rate_hw(first_student, "Erebor", 10)
 
-print(first_student.grades)
+# print(first_student.grades)
 
 first_mentor.courses_attached += ["Erebor"]
 
 first_student.rate_lecturer(first_mentor, "Erebor", 8)
 second_student.rate_lecturer(first_mentor, "Erebor", 5)
 
-print(first_mentor.grades)
+# print(first_mentor.grades)
+print(first_student)
