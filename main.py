@@ -1,50 +1,8 @@
-class Student:
-    """Класс, описывающий студентов"""
-    def __init__(self, name, surname, gender):
-        self.name = name
-        self.surname = surname
-        self.gender = gender
-        self.finished_courses = []
-        self.courses_in_progress = []
-        self.grades = {}
-
-    # Метод выставления оценок лекторам
-    def rate_lecturer(self, lecturer, course, grade):
-        if (isinstance(lecturer, Lecturer) and course in self.courses_in_progress
-                and course in lecturer.courses_attached):
-            if course in lecturer.grades:
-                lecturer.grades[course] += [grade]
-            else:
-                lecturer.grades[course] = [grade]
-        else:
-            return "Error"
-
-
-class Mentor:
-    """Родительский класс, описывающий преподавателей"""
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
-        self.courses_attached = []
-
-
-class Lecturer(Mentor):
-    """Преподаватель - лектор"""
-    def __init__(self, name, surname):
-        super().__init__(name, surname)
-        self.grades = {}
-
-
-class Reviewer(Mentor):
-    """Преподаватель - эксперт, проверяющий домашние задания"""
-    def rate_hw(self, student, course, grade):
-        if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
-            if course in student.grades:
-                student.grades[course] += [grade]
-            else:
-                student.grades[course] = [grade]
-        else:
-            return "Error"
+# импорт созданных классов
+from class_mentor import Mentor         # импорт класса преподавателя
+from class_student import Student       # импорт класса студента
+from class_lecturer import Lecturer     # импорт класса лектора
+from class_reviewer import Reviewer     # импорт класса проверяющего преподавателя
 
 
 first_mentor = Lecturer("Gandalf", "Gray")
