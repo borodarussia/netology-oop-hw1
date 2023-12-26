@@ -10,6 +10,7 @@ class Lecturer(Mentor):
         return(f"Имя: {self.name}\n" +
                f"Фамилия: {self.surname}\n" +
                f"Средняя оценка за лекции: {self.get_average_mark_for_lecture()}")
+
     # метод для определения средней оценки за проведенные лекции
     def get_average_mark_for_lecture(self):
 
@@ -25,3 +26,18 @@ class Lecturer(Mentor):
                 number_of_marks += 1
 
         return float(sum_of_marks / number_of_marks)
+
+    # метод для определения класса для сравнения
+    def __verify_data(cls, other):
+        if not isinstance(other, Lecturer):
+            raise TypeError("Операнд справа должен иметь тип Lecturer")
+        return other
+
+    # метод сравнения
+    def __eq__(self, other):
+        sc = self.__verify_data(other)
+        return self.get_average_mark_for_lecture()
+    # метод больше меньше
+    def __lt__(self, other):
+        sc = self.__verify_data(other)
+        return self.get_average_mark_for_lecture()

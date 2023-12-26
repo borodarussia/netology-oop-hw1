@@ -75,3 +75,19 @@ class Student:
             else:
                 output_str += f", {self.finished_courses[i]}"
         return output_str
+
+    # метод для определения класса для сравнения
+    def __verify_data(cls, other):
+        if not isinstance(other, Student):
+            raise TypeError("Операнд справа должен иметь тип Student")
+        return other
+
+    # метод сравнения
+    def __eq__(self, other):
+        sc = self.__verify_data(other)
+        return self.get_average_mark_for_homework()
+
+    # метод больше меньше
+    def __lt__(self, other):
+        sc = self.__verify_data(other)
+        return self.get_average_mark_for_homework()
