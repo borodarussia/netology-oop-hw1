@@ -7,7 +7,6 @@ from class_reviewer import Reviewer     # импорт класса провер
 
 first_mentor = Lecturer("Gandalf", "Gray")
 second_mentor = Reviewer("Gandalf", "White")
-# print(f"Имя лектора: {lect1.name}\nФамилия лектора: {lect1.surname}\n\n***\n\n")
 
 first_student = Student("Gimli", "Tolkien", "Dwarf")
 second_student = Student("Legolas", "Tolkien", "Elves")
@@ -19,12 +18,14 @@ second_mentor.courses_attached += ["Erebor"]
 
 second_mentor.rate_hw(first_student, "Erebor", 10)
 
-# print(first_student.grades)
+
 
 first_mentor.courses_attached += ["Erebor"]
 
 first_student.rate_lecturer(first_mentor, "Erebor", 8)
 second_student.rate_lecturer(first_mentor, "Erebor", 5)
 
-# print(first_mentor.grades)
+
 print(first_student)
+print(second_mentor)
+print(first_mentor)

@@ -26,7 +26,7 @@ class Student:
         sum_of_marks = float(0.0)
         number_of_marks = int(0)
 
-        if self.grades.keys() == 0:
+        if len(self.grades.keys()) == 0:
             return 0.0
 
         for key, values in self.grades.items():

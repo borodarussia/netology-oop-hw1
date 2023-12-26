@@ -11,3 +11,7 @@ class Reviewer(Mentor):
                 student.grades[course] = [grade]
         else:
             return "Error"
+    # перегрузка магического метода __str__
+    def __str__(self):
+        return (f"Имя: {self.name}\n" +
+                f"Фамилия: {self.surname}")
