@@ -15,7 +15,7 @@ class Student:
         return (
                 f"Имя: {self.name}\n"+
                 f"Фамилия: {self.surname}\n"+
-                f"Средняя оценка за домашние задания: {self.get_average_mark_for_homework()}\n" +
+                f"Средняя оценка за домашние задания: {'%.2f' % self.get_average_mark_for_homework()}\n" +
                 f"Курсы в процессе изучения: {self.get_info_about_courses_on_progress()}\n" +
                 f"Завершенные курсы: {self.get_info_about_finished_courses()}"
                 )

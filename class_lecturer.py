@@ -9,7 +9,7 @@ class Lecturer(Mentor):
     def __str__(self):
         return(f"Имя: {self.name}\n" +
                f"Фамилия: {self.surname}\n" +
-               f"Средняя оценка за лекции: {self.get_average_mark_for_lecture()}")
+               f"Средняя оценка за лекции: {'%.2f' % self.get_average_mark_for_lecture()}")
 
     # метод для определения средней оценки за проведенные лекции
     def get_average_mark_for_lecture(self):
